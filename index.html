@@ -1,30 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Find me a Movie</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<nav class="navbar">
-    <div class="container">
-        <a href="index.html" class="nav-brand">Find me a Movie</a>
-    </div>
-</nav>
-<div class="container">
-    <div class="jumbotron">
-        <h3 class="text-center">
-            Поиск фильмов
-        </h3>
 
-        <form id="search-form">
-            <input type="text" class="form-control" id="searchText" placeholder="Введите название">
+<style>
+    #container {
+        background: no-repeat;
+        background-position: center;
+        padding-left: 0!important;
+        padding-right: 0!important;
+        background-size: 100%!important;
+    }
+    .poster{
+        height: 300px;
+        margin: auto;
+    }
+
+    .spinner {
+
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        border: 10px solid;
+        border-radius: 50%;
+        border-left-color: transparent;
+        border-top-color: #008c9e;
+        border-right-color: #005f6b;
+        border-bottom-color: #343838;
+        animation: spin 1000ms infinite linear;
+
+    }
+    @keyframes spin {
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+
+    .text-info{
+        margin-bottom: 50px;
+    }
+
+</style>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Find me a movie</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Главная <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Фильмы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Сериалы</a>
+            </li>
+            <!--
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+            -->
+        </ul>
+        <form class="form-inline my-2 my-lg-0" id="search-form">
+            <input class="form-control mr-sm-2" type="search" placeholder="Введите название" aria-label="Search" id="searchText">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
         </form>
     </div>
-    <div class="container">
-        <div id="movies" class="row">
+</nav>
+<br>
+<div class="container" id="container">
+<!--    <div class="jumbotron bg-dark">-->
+<!--        <h3 class="text-center">-->
+<!--            <a href="index.html" style="text-decoration: initial; color: white;">Поисковик твоей мечты</a>-->
+<!--        </h3>-->
+<!--        <br>-->
 
+<!--    </div>-->
+    <div class="container" style="background: rgba(255, 255, 255, 0.95);">
+        <div id="movies" class="row">
         </div>
     </div>
 </div>
